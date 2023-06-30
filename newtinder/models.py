@@ -2,6 +2,8 @@ from PIL import Image
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+from config import settings
+
 
 class Profile(AbstractUser):
     choices = (
@@ -12,7 +14,9 @@ class Profile(AbstractUser):
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
     gender = models.CharField(max_length=10, choices=choices, default='male')
-    avatar = models.ImageField(upload_to="static/images/avatars/", null=True, blank=True)
+    avatar = models.ImageField(upload_to="static/images/avatars/", null=True, blank=True,
+                               default='static/images/logo.jpg')
+    likes = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name="like")
 
     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)
