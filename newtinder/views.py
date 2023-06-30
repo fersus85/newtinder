@@ -1,13 +1,14 @@
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from django.http import BadHeaderError
-from rest_framework import generics, status
+from rest_framework import generics, status, mixins, viewsets
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from config import settings
+from .filters import UserFilter
 from .serializers import UserListSerializer
 
 
@@ -47,3 +48,11 @@ def get_match(request, user_id):
     send_sympathy(email_user, name_matching, email_matching)
     data = {'Email вашего совпадения': email_matching}
     return Response(data, status=status.HTTP_200_OK)
+
+
+class UserListAPI(mixins.ListModelMixin, viewsets.GenericViewSet):
+    serializer_class = UserListSerializer
+    queryset = get_user_model().objects.all()
+    permission_classes = (IsAuthenticated,)
+    filter_backends = (UserFilter,)
+    filterset_fields = ('gender', 'first_name', 'last_name')
