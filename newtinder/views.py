@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.contrib.auth import get_user_model
+from rest_framework import generics
 
-# Create your views here.
+
+from .serializers import UserListSerializer
+
+
+class UserDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = UserListSerializer
+    queryset = get_user_model().objects.all()
+
