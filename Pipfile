@@ -9,6 +9,10 @@ pillow = "*"
 dj-rest-auth = "==1.1.0"
 django-allauth = "~=0.42.0"
 django-filter = "*"
+pyyaml = "==5.3.1"
+uritemplate = "==3.0.1"
+drf-yasg = "==1.17.1"
+djangorestframework = "~=3.11.0"
 
 [dev-packages]
 
