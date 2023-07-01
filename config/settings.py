@@ -25,7 +25,7 @@ SECRET_KEY = 't#py(&#8g1$me69pcaq(fmfkb_8uuk97c62#ux39s493a^@v9-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['node38a.containers.back4app.com',]
 
 
 # Application definition
