@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 't#py(&#8g1$me69pcaq(fmfkb_8uuk97c62#ux39s493a^@v9-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['node38a.containers.back4app.com','newtinder-deriabin1985.b4a.run']
 
