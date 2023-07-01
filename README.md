@@ -19,6 +19,7 @@
 
 1. Регистрация нового клиента: https://newtinder-deriabin1985.b4a.run/api/clients/create/registration/. 
 2. Личный кабинет для заполнения профиля (аватар, имя, фамилия, гендер): https://newtinder-deriabin1985.b4a.run/api/client/{id}/
-3. Список всех клиентов с функцией фильтра: https://newtinder-deriabin1985.b4a.run/api/list/
-4. Для лайка: https://newtinder-deriabin1985.b4a.run/api/clients/4/match/ если лайк взаимный отправляется письмо на оба адреса.
-5. Документация: https://newtinder-deriabin1985.b4a.run/swagger/ и https://newtinder-deriabin1985.b4a.run/redoc/
+3. На аватар наносится водяной знак с помощью Pillow через переопределение метода save в модели.
+4. Список всех клиентов с функцией фильтра: https://newtinder-deriabin1985.b4a.run/api/list/
+5. Для лайка: https://newtinder-deriabin1985.b4a.run/api/clients/4/match/ если лайк взаимный отправляется письмо на оба адреса.
+6. Документация: https://newtinder-deriabin1985.b4a.run/swagger/ и https://newtinder-deriabin1985.b4a.run/redoc/
